@@ -1,0 +1,21 @@
+{
+  "name": "hamburgueria-api",
+  "version": "1.0.0",
+  "description": "Projeto de Fim de Modulo: API REST com Express, mysql e docker",
+  "main": "app.js",
+  "scripts": {
+    "dev": "NODE_ENV=dev nodemon src/index.js",
+    "start": "NODE_ENV=prod node app.js"
+  },
+  "type": "module",
+  "author": "Jaiane dos Santos Guimaraes",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "mysql2": "^2.3.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
