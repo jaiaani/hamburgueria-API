@@ -3,7 +3,8 @@ class HamburguerModel {
         this.nome = nome,
         this.preco = preco,
         this.descricao = descricao
-        }
+    }
+   
 }
 
 export default HamburguerModel

@@ -1,4 +1,3 @@
-import { resolve } from "dns"
 import SQLcomandos from "../DAO/sqlComandos.js"
 import HamburguerModel from "../model/HamburguerModel.js"
 
@@ -14,11 +13,8 @@ class HamburguerController {
             } else {
                 const id = parseInt(req.params.idOuNome)
                 SQLcomandos.selectId(res, id)
-            }
-            console.log(req.params.idOuNome)
-            
+            } 
         })
-       
         app.post('/hamburguer', (req, res) => {
             const burguer = req.body
             const hamburguer = new HamburguerModel(burguer.nome, burguer.preco, burguer.descricao)
@@ -28,7 +24,22 @@ class HamburguerController {
             const nome = req.params.nome
             SQLcomandos.deleteNome(res, nome)
         })
-        
+        app.patch('/hamburguer/:idOuNome', (req, res)=> {
+            const valores = req.body
+            if(req.params.idOuNome.length > 2){ 
+                const nome = req.params.idOuNome
+                SQLcomandos.atualizaHamburguerPorNome(nome, valores, res)
+            } else {
+                const id = parseInt(req.params.idOuNome)
+                SQLcomandos.atualizaHamburguerPorId(id, valores, res)
+            }
+            
+        })
+        app.put('/hamburguer/:id', (req,res)=>{
+            const id = parseInt(req.params.id)
+            const valores = req.body 
+            SQLcomandos.atualizaTudoPorId(id, valores, res)
+        })
     }
 }
 
