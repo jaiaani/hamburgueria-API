@@ -1,5 +1,4 @@
 # API REST - Hamburgueria 
-![](./readme/burguers.gif)
 
 Projeto de final de módulo - Módulo 4: 
 Api Rest com nodejs.
@@ -7,7 +6,9 @@ Api Rest com nodejs.
 <div align="center"/>
 
 ## 				Sumário
-[Tecnologias Utilizadas](#tecnologia) | [Sobre](#sobre)|  [Rotas da API](#rotas)|  [Como usar?](howTo)| [Portas em uso](#portas)
+[Tecnologias Utilizadas](#tecnologias) | [Sobre](#sobre)|  [Rotas da API](#rotas)|  [Como usar?](howTo)| [Portas em uso](#portas)
+
+<img src='./imgReadme/burguers.gif' width=450px/>
 
 </div>
 
@@ -128,5 +129,9 @@ ports:
     expose:
       - 3306
 ```
+<div align="center"/>
+  
+<img src="./imgReadme/burger-dance.gif" width=450px>
+  
+ </div>
 
-![](./readme/burguer-dance.gif)
