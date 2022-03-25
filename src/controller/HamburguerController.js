@@ -20,9 +20,15 @@ class HamburguerController {
             const hamburguer = new HamburguerModel(burguer.nome, burguer.preco, burguer.descricao)
             SQLcomandos.insertHamburguer(res, hamburguer)
         })
-        app.delete('/hamburguer/:nome', (req, res)=> {
-            const nome = req.params.nome
-            SQLcomandos.deleteNome(res, nome)
+        app.delete('/hamburguer/:idOuNome', (req, res)=> {
+            if(req.params.idOuNome.length > 2){
+                const nome = req.params.idOuNome
+                SQLcomandos.deleteNome(res, nome)  
+            }else{
+                const id = parseInt(req.params.idOuNome)
+                SQLcomandos.deleteId(res, id)
+            }
+            
         })
         app.patch('/hamburguer/:idOuNome', (req, res)=> {
             const valores = req.body
@@ -38,7 +44,7 @@ class HamburguerController {
         app.put('/hamburguer/:id', (req,res)=>{
             const id = parseInt(req.params.id)
             const valores = req.body 
-            SQLcomandos.atualizaTudoPorId(id, valores, res)
+            SQLcomandos.atualizaHamburguerPorId(id, valores, res)
         })
     }
 }

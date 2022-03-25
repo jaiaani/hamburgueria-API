@@ -45,8 +45,19 @@ class SQLcomandos{
             }
         })
     }
-    static deleteNome(res, nome){ //deleta pelo nome
+    static deleteNome(res, nome){ 
         const sql = `DELETE FROM Hamburguers WHERE nome = "${nome}"`
+        conexaoMysql.query(sql, (erro, resultado) => {
+            if(erro){
+                res.status(400).send({'Ocorreu um erro ao deletar esse Hamburguer': erro})
+            }
+            else {
+                res.status(200).json({'Hamburguer removido com sucesso :D' : resultado})
+            }
+        })
+    }
+    static deleteId(res, id){ 
+        const sql = `DELETE FROM Hamburguers WHERE id = "${id}"`
         conexaoMysql.query(sql, (erro, resultado) => {
             if(erro){
                 res.status(400).send({'Ocorreu um erro ao deletar esse Hamburguer': erro})
