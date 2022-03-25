@@ -49,7 +49,7 @@ A entidade Hambúrguer possui os seguintes atributos:
 - - - -
 **[POST]**/hamburguer - A rota criará um nov hamburguer com as informações enviadas pela requisição. 
 Para poder cadastrar novos hamburguers utilize o modelo abaixo: 
-```json
+```javascript
 {
 “nome”: “X Egg Bacon”
 “preco”: 11.99
