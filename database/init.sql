@@ -1,3 +1,2 @@
 CREATE DATABASE IF NOT EXISTS Hamburgueria;
 USE Hamburgueria;
-DROP TABLE IF EXISTS Hamburguers;

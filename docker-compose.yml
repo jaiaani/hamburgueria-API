@@ -19,6 +19,11 @@ services:
       MYSQL_ROOT_PASSWORD: 12345
       SERVICE_NAME: mysqldb
       SERVICE_TAGS: prod
+    healthcheck:
+      test: ["CMD-SHELL", 'mysql --database=$$MYSQL_DATABASE --password=$$MYSQL_ROOT_PASSWORD --execute="USE Hamburgueria"']
+      interval: 30s
+      timeout: 10s
+      retries: 4
     networks:
       - internalnet
   nodeapp:
@@ -41,7 +46,9 @@ services:
       SERVICE_TAGS: prod
       SERVER_PORT: 3000
     depends_on:
-      - mysqldb
+      mysqldb:
+       condition: service_healthy
+    restart: on-failure
     networks:
       - internalnet
 networks:
