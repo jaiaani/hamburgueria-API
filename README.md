@@ -81,13 +81,13 @@ docker run hello-world
 ```
 **2. Copie e cole o comando abaixo no seu terminal.**
 ```bash
-git clone git clone https://github.com/jaiaani/hamburgueria-API.git && cd "hamburgueria-API" && docker-compose up --build
+git clone https://github.com/jaiaani/hamburgueria-API.git && cd "hamburgueria-API" && docker-compose up --build
 ```
  ------- OU ------------
   
 **2. Clone o repositório dentro de uma pasta da sua preferência:**
 ```git
-git clone git clone https://github.com/jaiaani/hamburgueria-API.git 
+git clone https://github.com/jaiaani/hamburgueria-API.git 
 ```
 
 **3. Entre na pasta do projeto:**
